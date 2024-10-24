@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	fmt.Printf("Hello")
+	const BMIPower = 2
+	userHeight := 1.8
+	userKilogram := 100.0
+	BMI := userKilogram / math.Pow(userHeight, BMIPower)
+	fmt.Print(BMI)
+
 }
