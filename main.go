@@ -14,7 +14,7 @@ func main() {
 	fmt.Scan(&userHeight)
 	fmt.Print("Enter your weight in kg: ")
 	fmt.Scan(&userKilogram)
-	BMI := userKilogram / math.Pow(userHeight, BMIPower)
+	BMI := userKilogram / math.Pow(userHeight/100, BMIPower)
 	outputResult(BMI)
 }
 
