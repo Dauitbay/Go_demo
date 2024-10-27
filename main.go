@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	const BMIPower = 2
 	userHeight := 1.8
 	userKilogram := 100.0
 	fmt.Println("__ Body Index Mass Calculator __ ")
