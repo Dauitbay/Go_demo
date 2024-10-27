@@ -15,7 +15,11 @@ func main() {
 	fmt.Print("Enter your weight in kg: ")
 	fmt.Scan(&userKilogram)
 	BMI := userKilogram / math.Pow(userHeight, BMIPower)
-	fmt.Printf("Your BMI is: %.0f \n", BMI)
-	fmt.Print(BMI)
+	outputResult(BMI)
+}
 
+
+func outputResult(bmi float64) {
+	result := fmt.Sprintf("Your BMI is: %.0f \n", bmi)
+	fmt.Print(result)
 }
