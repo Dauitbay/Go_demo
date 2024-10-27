@@ -9,17 +9,25 @@ func main() {
 	fmt.Println("__ Body Index Mass Calculator __ ")
 	userKilogram, userHeight := getUserInput()
 	BMI := calculateBMI(userKilogram, userHeight)
+	outputResult(BMI)
 	isLean := BMI < 16
 	if isLean {
-		fmt.Println("You dont have enough weight")
+		fmt.Println("You have strong deficit of the weight")
+	} else if BMI < 18.5 {
+		fmt.Println("You have deficit of the weight")
+	} else if BMI < 25 {
+		fmt.Println("You have normal weight")
+	} else if BMI < 30 {
+		fmt.Println("You are overweight")
+	} else {
+		fmt.Println("You have a degree of obesity")
 	}
-	outputResult(BMI)
 }
 
 
 func outputResult(bmi float64) {
 	result := fmt.Sprintf("Your BMI is: %.0f \n", bmi)
-	fmt.Print(result)
+	fmt.Println(result)
 }
 
 func calculateBMI(userKilogram float64, userHeight float64) float64 {
