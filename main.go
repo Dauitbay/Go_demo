@@ -9,6 +9,10 @@ func main() {
 	fmt.Println("__ Body Index Mass Calculator __ ")
 	userKilogram, userHeight := getUserInput()
 	BMI := calculateBMI(userKilogram, userHeight)
+	isLean := BMI < 16
+	if isLean {
+		fmt.Println("You dont have enough weight")
+	}
 	outputResult(BMI)
 }
 
