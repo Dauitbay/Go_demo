@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"os/user"
 )
 
 func main() {
@@ -14,7 +15,7 @@ func main() {
 	fmt.Scan(&userHeight)
 	fmt.Print("Enter your weight in kg: ")
 	fmt.Scan(&userKilogram)
-	BMI := userKilogram / math.Pow(userHeight, BMIPower)
+	BMI := calculateBMI(userKilogram, userHeight)
 	outputResult(BMI)
 }
 
@@ -22,4 +23,10 @@ func main() {
 func outputResult(bmi float64) {
 	result := fmt.Sprintf("Your BMI is: %.0f \n", bmi)
 	fmt.Print(result)
+}
+
+func calculateBMI(userKilogram float64, userHeight float64) float64 {
+	const BMIPower = 2
+	BMI := userKilogram / math.Pow(userHeight/100, BMIPower)
+	return BMI
 }
