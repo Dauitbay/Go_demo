@@ -7,6 +7,22 @@ import (
 
 func main() {
 	fmt.Println("__ Body Index Mass Calculator __ ")
+	var userConfirm bool = true
+	var userAnswer string
+	for userConfirm {
+		fmt.Println("Do you want to calculate BIM? ")
+		fmt.Scan(&userAnswer)
+		if userAnswer == "Yes" || userAnswer == "yes" {
+			startTheProcess()
+		} else if userAnswer == "No" || userAnswer == "no" {
+			break
+		} else {
+			fmt.Println("Invalid answer. You shuld write Yes or No")
+		}
+	}
+}
+
+func startTheProcess() {
 	userKilogram, userHeight := getUserInput()
 	BMI := calculateBMI(userKilogram, userHeight)
 	outputResult(BMI)
