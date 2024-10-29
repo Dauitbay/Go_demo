@@ -11,6 +11,18 @@ func main() {
 	BMI := calculateBMI(userKilogram, userHeight)
 	outputResult(BMI)
 	isLean := BMI < 16
+	switch {
+	case BMI < 16:
+		fmt.Println("You have strong deficit of the weight")
+	case BMI < 18.5:
+		fmt.Println("You have deficit of the weight")
+	case BMI < 25:
+		fmt.Println("You have normal weight")
+	case BMI < 30:
+		fmt.Println("You are overweight")
+	default:
+		fmt.Println("You have a degree of obesity")
+	}
 	if isLean {
 		fmt.Println("You have strong deficit of the weight")
 	} else if BMI < 18.5 {
@@ -23,7 +35,6 @@ func main() {
 		fmt.Println("You have a degree of obesity")
 	}
 }
-
 
 func outputResult(bmi float64) {
 	result := fmt.Sprintf("Your BMI is: %.0f \n", bmi)
